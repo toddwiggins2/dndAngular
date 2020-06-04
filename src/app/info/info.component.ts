@@ -10,13 +10,13 @@ import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
 export class InfoComponent implements OnInit {
 
   numberofAttacksHTML = 3;
-  dieNumberHTML
-  bonusHitValueHTML
-  dieTypeHTML
-  bonusDamageValueHTML
-  bonusRageDamageValueHTML
-  checkBless
-  checkBane
+  dieNumberHTML;
+  bonusHitValueHTML;
+  dieTypeHTML;
+  bonusDamageValueHTML;
+  bonusRageDamageValueHTML;
+  checkBless;
+  checkBane;
   constructor() { }
 
   ngOnInit(): void {
