@@ -1,0 +1,243 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <div class="wrapper">
+
+      <div class="aside aside-1">
+        <p>Left Side Bar</p>
+        <h2 style="color:black">d20 Dice Generator by Todd Wiggins</h2>
+
+      </div>
+
+      <aside class="aside aside-2">
+        <p>Right Side bar</p>
+        <button mat-raised-button color="primary">TestButton 3</button>
+      </aside>
+
+      <div class="main">
+        <p>MAIN AREA</p>
+        <button mat-raised-button color="primary">TestButton 4</button>
+      </div>
+
+      <div class="main">
+        <p>MAIN AREA</p>
+        <button mat-raised-button color="primary">TestButton 5</button>
+      </div>
+      <div class="main">
+        <p>MAIN AREA</p>
+        <button mat-raised-button color="primary">TestButton 6</button>
+      </div>
+
+
+    <aside class="aside aside-2">Aside 2</aside>
+
+
+</div> -->
+
+<div class="wrapper">
+  <!--   <header class="header">Header</header> -->
+  <article class="main">
+
+    <div class="center">
+      <img src="../../assets/heroimage.jpg" align="middle" />
+    </div>
+
+    <table class="table table-bordered" style="text-align: center;">
+      <ng-container>
+        <th>#</th>
+        <th>ID</th>
+        <th>First D20</th>
+        <th>Second D20</th>
+        <th>Final D20</th>
+        <th>Damage Dice</th>
+        <th>Number of Attacks</th>
+        <th>Damage Bonus</th>
+        <th>Plus to Hit</th>
+      </ng-container>
+      <tr>
+        <td>1</td>
+        <td>22</td>
+        <td>22</td>
+        <td>22</td>
+        <td>44</td>
+        <td>55</td>
+        <td>66</td>
+        <td>77</td>
+        <td>88</td>
+      </tr>
+    </table>
+  </article>
+
+
+
+  <aside class="aside aside-1">
+    <div>
+      <mat-card>
+        <label>Basic Damage Info:</label>
+        <mat-card-content>
+          <mat-form-field>
+            <mat-label>Choose Number of Attacks!</mat-label>
+            <mat-select [(value)]="numberofAttacksHTML">
+              <!-- <mat-option>None</mat-option> -->
+              <mat-option [value]="1">1</mat-option>
+              <mat-option [value]="2">2</mat-option>
+              <mat-option [value]="3">3</mat-option>
+              <mat-option [value]="4">4</mat-option>
+              <mat-option [value]="5">5</mat-option>
+              <mat-option [value]="6">6</mat-option>
+              <mat-option [value]="15">15</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <div>
+            <mat-form-field >
+              <mat-label>Number of Die:</mat-label>
+              <input
+                type="number"
+                min="1"
+                [(ngModel)]="dieNumberHTML"
+                matInput
+              />
+            </mat-form-field>
+
+            <mat-form-field >
+              <mat-label>Die Type:</mat-label>
+              <mat-select [(value)]="dieTypeHTML">
+                <mat-option [value]="4">d4</mat-option>
+                <mat-option [value]="6">d6</mat-option>
+                <mat-option [value]="8">d8</mat-option>
+                <mat-option [value]="10">d10</mat-option>
+                <mat-option [value]="12">d12</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+
+          <mat-form-field>
+            <mat-label>Choose Plus Hit Bonus:</mat-label>
+            <mat-select [(value)]="bonusHitValueHTML">
+              <!-- <mat-option>None</mat-option> -->
+              <mat-option [value]="0">0</mat-option>
+              <mat-option [value]="1">1</mat-option>
+              <mat-option [value]="2">2</mat-option>
+              <mat-option [value]="3">3</mat-option>
+              <mat-option [value]="4">4</mat-option>
+              <mat-option [value]="5">5</mat-option>
+              <mat-option [value]="6">6</mat-option>
+              <mat-option [value]="7">7</mat-option>
+              <mat-option [value]="8">8</mat-option>
+              <mat-option [value]="9">9</mat-option>
+              <mat-option [value]="10">10</mat-option>
+              <mat-option [value]="15">15</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>Choose Plus Damage Bonus:</mat-label>
+            <mat-select [(value)]="bonusDamageValueHTML">
+              <!-- <mat-option>None</mat-option> -->
+              <mat-option [value]="0">0</mat-option>
+              <mat-option [value]="1">1</mat-option>
+              <mat-option [value]="2">2</mat-option>
+              <mat-option [value]="3">3</mat-option>
+              <mat-option [value]="4">4</mat-option>
+              <mat-option [value]="5">5</mat-option>
+              <mat-option [value]="6">6</mat-option>
+              <mat-option [value]="7">7</mat-option>
+              <mat-option [value]="8">8</mat-option>
+              <mat-option [value]="9">9</mat-option>
+              <mat-option [value]="10">10</mat-option>
+              <mat-option [value]="15">15</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </mat-card-content>
+      <!-- </mat-card>
+    </div>
+
+    <!-- <br /> -->
+    <!-- <div> -->
+      <!-- <mat-card> -->
+        <label>Barbarian Rage:</label>
+        <mat-card-content>
+          <mat-form-field>
+            <mat-label>Rage Damage Bonus:</mat-label>
+            <mat-select [(value)]="bonusRageDamageValueHTML">
+              <!-- <mat-option>None</mat-option> -->
+              <mat-option [value]="0">0</mat-option>
+              <mat-option [value]="2">2</mat-option>
+              <mat-option [value]="3">3</mat-option>
+              <mat-option [value]="4">4</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <!-- <br /> -->
+          <!--           <mat-form-field> -->
+          <label>Modification Info:</label>
+          <br />
+          <mat-checkbox [(ngModel)]="checkBless">Bless</mat-checkbox>
+          <br />
+          <mat-checkbox [(ngModel)]="checkBane">Bane</mat-checkbox>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </aside>
+
+
+  <aside class="aside aside-2">
+    <div>
+      <mat-card>
+        <button mat-raised-button color="warn">
+          TestButton
+        </button>
+        <br />
+        <mat-label>Roll Options:</mat-label>
+        <div class="rollButtons">
+          <div style="display: flex;">
+            <button
+              style="margin-right: .5rem; margin-top: .5rem; width: 100%;"
+              mat-raised-button
+              color="primary"
+              type="button"
+            >
+              ROLL D20
+            </button>
+            <button
+              style="margin-top: .5rem; width: 100%;"
+              mat-raised-button
+              color="primary"
+              type="button"
+            >
+              ADV. ROLL D20
+            </button>
+          </div>
+          <div style="display: flex;">
+            <button
+              style="margin-right: .5rem; margin-top: .5rem; width: 100%;"
+              mat-raised-button
+              color="primary"
+              type="button"
+            >
+              ROLL MULTI ATTACK
+            </button>
+            <button
+              style="margin-top: .5rem; width: 100%;"
+              mat-raised-button
+              color="primary"
+              type="button"
+            >
+              ADV. MULTI ATTACK
+            </button>
+          </div>
+          <div style="display: flex;">
+            <button
+              style="margin-top: .5rem; width: 100%;"
+              mat-raised-button
+              color="warn"
+              type="button"
+            >
+              Disadvantage Roll Multiple Attacks
+            </button>
+          </div>
+        </div>
+      </mat-card>
+    </div>
+  </aside>
+  <!--   <footer class="footer">Footer</footer> -->
+</div>

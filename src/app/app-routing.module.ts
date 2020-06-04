@@ -1,8 +1,16 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
+import { DicerollerComponent } from './diceroller/diceroller.component';
+import { InfoComponent } from './info/info.component';
+import { AppComponent } from './app.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  // { path: '', component: AppComponent},
+  { path: 'diceroller', component: DicerollerComponent},
+  { path: 'info', component: InfoComponent}
+
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
