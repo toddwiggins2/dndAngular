@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <mat-sidenav-container>
-  <mat-sidenav #sidenav opened [mode]="mode.value">
+  <!-- <mat-sidenav #sidenav opened [mode]="mode.value"> -->
+    <mat-sidenav opened mode="side" position="start">
+<!--
+
     <div>
+
       <button
         style="float: right; margin: 2px;"
         mat-raised-button
@@ -12,7 +16,7 @@
       </button>
       <br />
       <br />
-    </div>
+    </div> -->
 
     <div>
       <mat-card>
@@ -148,14 +152,14 @@
     </p> -->
 
     <div class="center">
-      <button
+      <!-- <button
         class="navButton"
         mat-raised-button
         color="accent"
         (click)="sidenav.toggle()"
       >
         <mat-icon>arrow_forward</mat-icon>
-      </button>
+      </button> -->
       <img src="../../assets/heroimage.jpg" align="middle" />
     </div>
 

@@ -1,0 +1,14 @@
+<mat-toolbar md-whiteframe="8" layout="row" class="example-container" color="primary">
+  <mat-toolbar-row>
+    <span>Dungeons & Dragons Helper</span>
+    <span class="example-spacer"></span>
+    <button mat-icon-button [matMenuTriggerFor]="menu"><mat-icon>home</mat-icon></button>
+    <mat-menu #menu="matMenu">
+      <!-- <button mat-menu-item href="#" routerLink="/">Home</button> -->
+      <button mat-menu-item href="#" routerLink="/diceroller">
+        Dice Roller
+      </button>
+      <button mat-menu-item href="#" routerLink="/info">Information</button>
+    </mat-menu>
+  </mat-toolbar-row>
+</mat-toolbar>

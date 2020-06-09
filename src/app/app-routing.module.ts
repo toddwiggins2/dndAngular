@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 
 const routes: Routes = [
   // { path: '', component: AppComponent},
+  { path: '', redirectTo: '/diceroller', pathMatch: 'full'},
+
   { path: 'diceroller', component: DicerollerComponent},
   { path: 'info', component: InfoComponent}
 

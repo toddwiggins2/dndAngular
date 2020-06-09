@@ -14,10 +14,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MAT_FORM_FIELD_DEFAULT_OPTIONS} from '@angular/material/form-field';
 import {MatNativeDateModule} from '@angular/material/core';
 import {DemoMaterialModule} from './material-module';
+import { NavagationbarComponent } from './navagationbar/navagationbar.component';
 
 
 @NgModule({
-  declarations: [AppComponent, DicerollerComponent, InfoComponent],
+  declarations: [AppComponent, DicerollerComponent, InfoComponent, NavagationbarComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
