@@ -1,12 +1,12 @@
-import { Component, OnInit, Input, ViewChild, Output } from '@angular/core';
+import { Component, OnInit, /* Input, ViewChild, Output */ } from '@angular/core';
 // import { Dice } from '../dice';
-import { NgModule } from '@angular/core';
+// import { NgModule } from '@angular/core';
 // import { D20Array } from '../dice';
-import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
-import { HtmlParser } from '@angular/compiler';
+// import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
+// import { HtmlParser } from '@angular/compiler';
 import { FormControl } from '@angular/forms';
-import { MatTable } from '@angular/material/table';
-import { MatTableModule } from '@angular/material/table';
+// import { MatTable } from '@angular/material/table';
+// import { MatTableModule } from '@angular/material/table';
 
 export interface AttackArray {
   ID: number;
@@ -112,12 +112,11 @@ export class DicerollerComponent implements OnInit {
     }
     this.dataSource = [...this.dataSource];
     this.totalAllDamage = this.getTotalDamage();
+    // tslint:disable-next-line: semicolon
   };
 
   getTotalDamage() {
-    return this.dataSource
-      .map((t) => t.damageTotal)
-      .reduce((acc, value) => acc + value, 0);
+    return this.dataSource.map((t) => t.damageTotal).reduce((acc, value) => acc + value, 0);
   }
 
   // *********************************
@@ -196,7 +195,7 @@ export class DicerollerComponent implements OnInit {
   // ***********************************
 
   getDamage(numberOfDie, dieType) {
- /*    const numberOfDie = this.dieNumberHTML;
+    /*    const numberOfDie = this.dieNumberHTML;
     const dieType = this.dieTypeHTML; */
 
     let rValueDamage = 0;
@@ -207,16 +206,13 @@ export class DicerollerComponent implements OnInit {
       // console.log('Final Value Loop: ' + finalrValue);
       rValueDamage = Math.floor(Math.random() * dieType) + 1;
       finalrValue = finalrValue + rValueDamage;
-      this.arrayOfDamageDie[this.arrayOfDamageDie.length] = ` Die ${
-        index + 1
-      }: ${rValueDamage}`; // + ' ' + rValueDamage;
+      this.arrayOfDamageDie[this.arrayOfDamageDie.length] = ` Die ${index + 1}: ${rValueDamage}`; // + ' ' + rValueDamage;
       // console.log('Die Roll: ' + rValueDamage);
       // console.log('Final Value Loop: ' + finalrValue);
     }
-    this.returnDamagePlusMod =
-      finalrValue + this.bonusDamageValueHTML + this.bonusRageDamageValueHTML;
+    this.returnDamagePlusMod = finalrValue + this.bonusDamageValueHTML + this.bonusRageDamageValueHTML;
 
-    console.log('test array from getDamage function: ' + this.arrayOfDamageDie);
+    // console.log('test array from getDamage function: ' + this.arrayOfDamageDie);
 
     // console.log(numberOfDie + 'd' + dieType + ' Result: ' + finalrValue);
 
@@ -233,54 +229,30 @@ export class DicerollerComponent implements OnInit {
       this.dataSource.pop();
     }
     let diceTotal = 0;
-   // let brutalCriticalValue = 0;
     this.totalAllDamage = 0;
 
     for (let index = 0; index < this.numberofAttacksHTML; index++) {
-      // Get just Dice roll for Damage:
-     // const firstDice = this.getDamage(this.dieNumberHTML, this.dieTypeHTML);
-
       // Roll a d20 with adv. and store three values:
       if (rollsWith === 'advantage') {
         // tslint:disable-next-line: no-var-keyword
-        var [
-          resultFirstD20,
-          resultSecondD20,
-          resultFinalD20,
-        ] = this.getRoll20Advantage('advantage'); // this.d20advantageNumber;
+        var [resultFirstD20, resultSecondD20, resultFinalD20] = this.getRoll20Advantage('advantage');
       } else if (rollsWith === 'notAdvantage') {
         // tslint:disable-next-line: no-var-keyword
-        var [
-          resultFirstD20,
-          resultSecondD20,
-          resultFinalD20,
-        ] = this.getRoll20Advantage('notAdvantage'); // this.d20advantageNumber;
+        var [resultFirstD20, resultSecondD20, resultFinalD20] = this.getRoll20Advantage('notAdvantage');
       } else if (rollsWith === 'disAdvantage') {
-        // tslint:disable-next-line: no-var-keyword
-        var [
-          // tslint:disable-next-line: prefer-const
-          resultFirstD20,
-          // tslint:disable-next-line: prefer-const
-          resultSecondD20,
-          // tslint:disable-next-line: prefer-const
-          resultFinalD20,
-        ] = this.getRoll20Advantage('disAdvantage'); // this.d20advantageNumber;
+        // tslint:disable-next-line: no-var-keyword prefer-const
+        var [resultFirstD20, resultSecondD20, resultFinalD20] = this.getRoll20Advantage('disAdvantage');
       }
 
       if (resultFinalD20 === 20) {
         // Natural 20 Crit:
-        // const secondDice = this.getDamage(this.dieNumberHTML, this.dieTypeHTML);
-        // brutalCriticalValue = Math.floor(Math.random() * 4) + 1;
-        const totalCritNumberofDieToRoll = ((this.dieNumberHTML * 2) + this.brutalCriticalHTML);
-        console.log(`Total of all die to roll: ${totalCritNumberofDieToRoll}`);
+        const totalCritNumberofDieToRoll = this.dieNumberHTML * 2 + this.brutalCriticalHTML;
+
+        // console.log(`Total of all die to roll: ${totalCritNumberofDieToRoll}`);
+
         // tslint:disable-next-line: no-var-keyword
         var damageDieTotal = this.getDamage(totalCritNumberofDieToRoll, this.dieTypeHTML);
-        diceTotal =
-         damageDieTotal +
-/*           firstDice +
-          secondDice + */
-          this.bonusDamageValueHTML +
-          this.bonusRageDamageValueHTML;
+        diceTotal = damageDieTotal + this.bonusDamageValueHTML + this.bonusRageDamageValueHTML;
         // console.log('Dice Total test: First Dice ' + firstDice + 'Second Dice: ' + secondDice +
         // 'Total: ' + diceTotal);
       } else if (resultFinalD20 === 1) {
@@ -291,15 +263,12 @@ export class DicerollerComponent implements OnInit {
         // Normal Dice Roll no Miss or Crit:
         // tslint:disable-next-line: no-var-keyword prefer-const
         var damageDieTotal = this.getDamage(this.dieNumberHTML, this.dieTypeHTML);
-        diceTotal =
-        damageDieTotal + this.bonusDamageValueHTML + this.bonusRageDamageValueHTML;
+        diceTotal = damageDieTotal + this.bonusDamageValueHTML + this.bonusRageDamageValueHTML;
       }
 
       // Bless and Bane Values
       const baneValue = this.checkBane ? Math.floor(Math.random() * 4) + 1 : 0;
-      const blessValue = this.checkBless
-        ? Math.floor(Math.random() * 4) + 1
-        : 0;
+      const blessValue = this.checkBless ? Math.floor(Math.random() * 4) + 1 : 0;
 
       // Variable of Damage Output:
       const newItem = {
@@ -327,7 +296,7 @@ export class DicerollerComponent implements OnInit {
       this.arrayOfDamageDie.length = 0;
     }
 
-    console.log(this.dataSource);
+    // console.log(this.dataSource);
     // console.log('All Damage: ' + this.totalAllDamage);
     // console.log(d20Array.FirstD20);
   }
