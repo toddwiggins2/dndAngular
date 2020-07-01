@@ -71,7 +71,7 @@ export class DicerollerComponent implements OnInit {
   mode = new FormControl('side');
 
   // D20 rolles outcomes:
-  valueD20: number;
+  valueD20 = 20;
   valueD20Advantage: string;
 
   // On keypress variable (not needed)

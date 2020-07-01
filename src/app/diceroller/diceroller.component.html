@@ -5,7 +5,9 @@
 
   <div class="left-data">
     <mat-card style="padding-bottom: 0;">
-      <label>Basic Damage Info:</label>
+      <div style="margin-bottom: 0.5rem;">
+        <label>Basic Damage Info:</label>
+      </div>
       <mat-card-content>
         <mat-form-field>
           <mat-label>Choose Number of Attacks!</mat-label>
@@ -83,7 +85,9 @@
     <!--       </div>
       <div> -->
     <mat-card style="margin-top: 0.5rem;">
-      <label>Barbarian Rage:</label>
+      <div style="margin-bottom: 0.5rem;">
+        <label>Barbarian Rage:</label>
+      </div>
       <mat-card-content>
         <mat-form-field>
           <mat-label>Rage Damage Bonus:</mat-label>
@@ -374,13 +378,15 @@
  -->
   <div class="right-data">
     <mat-card>
-      <button mat-raised-button color="warn" (click)="testButton()">
+      <!--       <button mat-raised-button color="warn" (click)="testButton()">
         TestButton
-      </button>
+      </button> -->
+      <label>Actions:</label>
+
       <div>
         <div style="display: flex;">
           <button
-            style="margin: 0.5rem; margin-left: 0; width: -webkit-fill-available; background: #4e74a8;"
+            style="margin: 0.5rem; margin-left: 0; width: 100%; background: #4e74a8;"
             mat-raised-button
             color="primary"
             (click)="getRoll20Advantage('notAdvantage')"
@@ -389,7 +395,7 @@
             Roll D20
           </button>
           <button
-            style="margin: 0.5rem; margin-right: 0; width: -webkit-fill-available; background: #4d55a1;"
+            style="margin: 0.5rem; margin-right: 0; width: 100%; background: #4d55a1;"
             mat-raised-button
             color="primary"
             (click)="getRoll20Advantage('advantage')"
@@ -400,7 +406,7 @@
         </div>
         <div style="display: flex;">
           <button
-            style="margin: 0.5rem; margin-left: 0; width: -webkit-fill-available; background: #4d55a1;"
+            style="margin: 0.5rem; margin-left: 0; width: 100%; background: #84DCC6; color: black;"
             mat-raised-button
             color="primary"
             (click)="multipleAttacks('notAdvantage')"
@@ -409,7 +415,7 @@
             Roll Multi Attack
           </button>
           <button
-            style="margin: 0.5rem; margin-right: 0; width: -webkit-fill-available; background: #4e74a8;"
+            style="margin: 0.5rem; margin-right: 0; width: 100%; background: #f4f1bb; color: black;"
             mat-raised-button
             color="primary"
             (click)="multipleAttacks('advantage')"
@@ -420,7 +426,14 @@
         </div>
         <div style="display: flex;">
           <button
-            style="margin: 0.5rem; margin-left: 0; margin-right: 0; width: -webkit-fill-available;"
+            style="
+              margin: 0.5rem;
+              margin-left: 0;
+              margin-right: 0;
+              width: 100%;
+              /*               background: #FF686B;
+              color: black */
+            "
             mat-raised-button
             color="warn"
             (click)="multipleAttacks('disAdvantage')"
