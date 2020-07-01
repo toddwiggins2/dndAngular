@@ -195,9 +195,9 @@ export class DicerollerComponent implements OnInit {
   // ** Method for Rolling Damage Die **
   // ***********************************
 
-  getDamage(/* numberOfDie, dieType */) {
-    const numberOfDie = this.dieNumberHTML;
-    const dieType = this.dieTypeHTML;
+  getDamage(numberOfDie, dieType) {
+ /*    const numberOfDie = this.dieNumberHTML;
+    const dieType = this.dieTypeHTML; */
 
     let rValueDamage = 0;
     let finalrValue = 0;
@@ -233,12 +233,12 @@ export class DicerollerComponent implements OnInit {
       this.dataSource.pop();
     }
     let diceTotal = 0;
-    let brutalCriticalValue = 0;
+   // let brutalCriticalValue = 0;
     this.totalAllDamage = 0;
 
     for (let index = 0; index < this.numberofAttacksHTML; index++) {
       // Get just Dice roll for Damage:
-      const firstDice = this.getDamage();
+     // const firstDice = this.getDamage(this.dieNumberHTML, this.dieTypeHTML);
 
       // Roll a d20 with adv. and store three values:
       if (rollsWith === 'advantage') {
@@ -269,11 +269,16 @@ export class DicerollerComponent implements OnInit {
 
       if (resultFinalD20 === 20) {
         // Natural 20 Crit:
-        const secondDice = this.getDamage();
-        brutalCriticalValue = Math.floor(Math.random() * 4) + 1;
+        // const secondDice = this.getDamage(this.dieNumberHTML, this.dieTypeHTML);
+        // brutalCriticalValue = Math.floor(Math.random() * 4) + 1;
+        const totalCritNumberofDieToRoll = ((this.dieNumberHTML * 2) + this.brutalCriticalHTML);
+        console.log(`Total of all die to roll: ${totalCritNumberofDieToRoll}`);
+        // tslint:disable-next-line: no-var-keyword
+        var damageDieTotal = this.getDamage(totalCritNumberofDieToRoll, this.dieTypeHTML);
         diceTotal =
-          firstDice +
-          secondDice +
+         damageDieTotal +
+/*           firstDice +
+          secondDice + */
           this.bonusDamageValueHTML +
           this.bonusRageDamageValueHTML;
         // console.log('Dice Total test: First Dice ' + firstDice + 'Second Dice: ' + secondDice +
@@ -284,8 +289,10 @@ export class DicerollerComponent implements OnInit {
         // console.log('Natural 1: ' + diceTotal);
       } else {
         // Normal Dice Roll no Miss or Crit:
+        // tslint:disable-next-line: no-var-keyword prefer-const
+        var damageDieTotal = this.getDamage(this.dieNumberHTML, this.dieTypeHTML);
         diceTotal =
-          firstDice + this.bonusDamageValueHTML + this.bonusRageDamageValueHTML;
+        damageDieTotal + this.bonusDamageValueHTML + this.bonusRageDamageValueHTML;
       }
 
       // Bless and Bane Values
@@ -300,7 +307,7 @@ export class DicerollerComponent implements OnInit {
         FirstD20: resultFirstD20,
         SecondD20: resultSecondD20,
         FinalD20: resultFinalD20,
-        damageDie: firstDice, // this.getDamage(),
+        damageDie: damageDieTotal, // this.getDamage(),
         numberofAttacks: this.numberofAttacksHTML,
         damageBonus: this.bonusDamageValueHTML,
         plusToHit: this.bonusHitValueHTML,
@@ -309,7 +316,7 @@ export class DicerollerComponent implements OnInit {
         bless: blessValue,
         bane: baneValue,
         allDiceObjects: this.arrayOfDamageDie.join(', '),
-        brutalCritical: brutalCriticalValue,
+        brutalCritical: this.brutalCriticalHTML,
       };
       // Push new Values into Interface and update Datasource.
       this.dataSource.push(newItem);
