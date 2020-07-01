@@ -194,12 +194,18 @@ mat-option {
 
 .wrapper {
   display: grid;
-  grid-gap: 5px 10px;
-  grid-template-columns: 25% auto 25%;
+  grid-gap: .5rem .5rem;
+  grid-template-columns: 20% auto 20%;
+  grid-template-rows: 3;
   // font-weight: bold;
   // text-align: center;
   background: #231942;
-  padding: 5px;
+  //background: white;
+  padding-right: .5rem;
+  padding-left: .5rem;
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+  height: 100%;
 }
 
 .mat-app-background {
@@ -209,12 +215,90 @@ mat-option {
 
 .left-data {
  grid-column: 1;
+ min-width: 280px;
 }
 
 .center-data {
 grid-column: 2;
 }
 
-right-data {
+.right-data {
 grid-column: 3;
+min-width: 280px;
+}
+
+@media all and (max-width: 1440px) {
+  //.aside { flex: 1 0 0 !important; }
+  .wrapper {
+    display: grid;
+    grid-gap: .5rem .5rem;
+    grid-template-columns: 1fr 1fr ;
+    grid-template-rows: 2;
+    // font-weight: bold;
+    // text-align: center;
+    background: #231942;
+    //background: white;
+    padding-right: .5rem;
+    padding-left: .5rem;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    height: 100%;
+  }
+  .left-data {
+    grid-column: 1;
+    grid-row: 2;
+    min-width: 280px;
+   }
+
+   .center-data {
+    grid-column: 1 / span 2;
+    grid-row: 1;
+   }
+
+   .right-data {
+    grid-column: 2;
+    grid-row: 2;
+    min-width: 280px;
+   }
+   .centerIMG {
+     display: none;
+   }
+}
+
+@media all and (max-width: 680px) {
+  //.aside { flex: 1 0 0 !important; }
+  .wrapper {
+    display: grid;
+    grid-gap: .5rem .5rem;
+    grid-template-columns: 1fr;
+    grid-template-rows: 2;
+    // font-weight: bold;
+    // text-align: center;
+    background: #231942;
+    //background: white;
+    padding-right: .5rem;
+    padding-left: .5rem;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    height: 100%;
+  }
+  .left-data {
+    grid-column: 1;
+    grid-row: 3;
+    min-width: 280px;
+   }
+
+   .center-data {
+    grid-column: 1;
+    grid-row: 1;
+   }
+
+   .right-data {
+    grid-column: 1;
+    grid-row: 2;
+    min-width: 280px;
+   }
+   .centerIMG {
+     display: none;
+   }
 }
