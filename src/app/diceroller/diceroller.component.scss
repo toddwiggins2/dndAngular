@@ -108,9 +108,9 @@ table, th, td {
   // color: rgb(190, 145, 20);
 }
 
-.sideBar {
-  width:300px;
-}
+// .sideBar {
+//   width:300px;
+// }
 
 
 .navButton {
@@ -135,6 +135,8 @@ table, th, td {
   flex-direction: column;
   justify-content: center;
   padding: 0;
+  color: #F1FAEE;
+
 }
 
 .mat-cell {
@@ -143,6 +145,8 @@ table, th, td {
   text-align: center;
   justify-content:center;
   padding: 0;
+  color: #F1FAEE;
+
 }
 
 .mat-footer-cell {
@@ -151,9 +155,65 @@ table, th, td {
   text-align: center;
   justify-content:center;
   padding: 0;
+  color: #F1FAEE;
+
 }
 
 .mat-table {
   // display: flex;
   overflow: auto;
+  background: #5E548E;
+  color: #F1FAEE;
+
+}
+
+
+.mat-form-field {
+  //display: block;
+  width: 100%;
+  //background: blueviolet;
+}
+
+.mat-drawer {
+  background: #231942;
+
+}
+
+.mat-drawer-content {
+  background: #231942
+}
+
+.mat-card {
+  background: #5E548E;
+
+}
+mat-option {
+  background:#231942
+}
+
+.wrapper {
+  display: grid;
+  grid-gap: 5px 10px;
+  grid-template-columns: 25% auto 25%;
+  // font-weight: bold;
+  // text-align: center;
+  background: #231942;
+  padding: 5px;
+}
+
+.mat-app-background {
+  background-color: #231942;
+  color: #F1FAEE;
+}
+
+.left-data {
+ grid-column: 1;
+}
+
+.center-data {
+grid-column: 2;
+}
+
+right-data {
+grid-column: 3;
 }

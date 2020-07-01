@@ -36,8 +36,7 @@
 <div class="wrapper">
   <!--   <header class="header">Header</header> -->
   <article class="main">
-
-    <div class="center">
+    <div>
       <img src="../../assets/heroimage.jpg" align="middle" />
     </div>
 
@@ -64,17 +63,70 @@
         <td>77</td>
         <td>88</td>
       </tr>
+      <tr>
+        <td>1</td>
+        <td>22</td>
+        <td>22</td>
+        <td>22</td>
+        <td>44</td>
+        <td>55</td>
+        <td>66</td>
+        <td>77</td>
+        <td>88</td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>22</td>
+        <td>22</td>
+        <td>22</td>
+        <td>44</td>
+        <td>55</td>
+        <td>66</td>
+        <td>77</td>
+        <td>88</td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>22</td>
+        <td>22</td>
+        <td>22</td>
+        <td>44</td>
+        <td>55</td>
+        <td>66</td>
+        <td>77</td>
+        <td>88</td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>22</td>
+        <td>22</td>
+        <td>22</td>
+        <td>44</td>
+        <td>55</td>
+        <td>66</td>
+        <td>77</td>
+        <td>88</td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>22</td>
+        <td>22</td>
+        <td>22</td>
+        <td>44</td>
+        <td>55</td>
+        <td>66</td>
+        <td>77</td>
+        <td>88</td>
+      </tr>
     </table>
   </article>
-
-
 
   <aside class="aside aside-1">
     <div>
       <mat-card>
         <label>Basic Damage Info:</label>
         <mat-card-content>
-          <mat-form-field>
+          <mat-form-field style="max-width: 100%;">
             <mat-label>Choose Number of Attacks!</mat-label>
             <mat-select [(value)]="numberofAttacksHTML">
               <!-- <mat-option>None</mat-option> -->
@@ -88,8 +140,8 @@
             </mat-select>
           </mat-form-field>
 
-          <div>
-            <mat-form-field >
+          <div style="display: flex;">
+            <mat-form-field>
               <mat-label>Number of Die:</mat-label>
               <input
                 type="number"
@@ -98,8 +150,8 @@
                 matInput
               />
             </mat-form-field>
-
-            <mat-form-field >
+            <span style="padding: 5px;"></span>
+            <mat-form-field>
               <mat-label>Die Type:</mat-label>
               <mat-select [(value)]="dieTypeHTML">
                 <mat-option [value]="4">d4</mat-option>
@@ -111,53 +163,57 @@
             </mat-form-field>
           </div>
 
-          <mat-form-field>
-            <mat-label>Choose Plus Hit Bonus:</mat-label>
-            <mat-select [(value)]="bonusHitValueHTML">
-              <!-- <mat-option>None</mat-option> -->
-              <mat-option [value]="0">0</mat-option>
-              <mat-option [value]="1">1</mat-option>
-              <mat-option [value]="2">2</mat-option>
-              <mat-option [value]="3">3</mat-option>
-              <mat-option [value]="4">4</mat-option>
-              <mat-option [value]="5">5</mat-option>
-              <mat-option [value]="6">6</mat-option>
-              <mat-option [value]="7">7</mat-option>
-              <mat-option [value]="8">8</mat-option>
-              <mat-option [value]="9">9</mat-option>
-              <mat-option [value]="10">10</mat-option>
-              <mat-option [value]="15">15</mat-option>
-            </mat-select>
-          </mat-form-field>
+          <div style="display: flex;">
+            <mat-form-field>
+              <mat-label>Choose Plus Hit Bonus:</mat-label>
+              <mat-select [(value)]="bonusHitValueHTML">
+                <!-- <mat-option>None</mat-option> -->
+                <mat-option [value]="0">0</mat-option>
+                <mat-option [value]="1">1</mat-option>
+                <mat-option [value]="2">2</mat-option>
+                <mat-option [value]="3">3</mat-option>
+                <mat-option [value]="4">4</mat-option>
+                <mat-option [value]="5">5</mat-option>
+                <mat-option [value]="6">6</mat-option>
+                <mat-option [value]="7">7</mat-option>
+                <mat-option [value]="8">8</mat-option>
+                <mat-option [value]="9">9</mat-option>
+                <mat-option [value]="10">10</mat-option>
+                <mat-option [value]="15">15</mat-option>
+              </mat-select>
+            </mat-form-field>
 
-          <mat-form-field>
-            <mat-label>Choose Plus Damage Bonus:</mat-label>
-            <mat-select [(value)]="bonusDamageValueHTML">
-              <!-- <mat-option>None</mat-option> -->
-              <mat-option [value]="0">0</mat-option>
-              <mat-option [value]="1">1</mat-option>
-              <mat-option [value]="2">2</mat-option>
-              <mat-option [value]="3">3</mat-option>
-              <mat-option [value]="4">4</mat-option>
-              <mat-option [value]="5">5</mat-option>
-              <mat-option [value]="6">6</mat-option>
-              <mat-option [value]="7">7</mat-option>
-              <mat-option [value]="8">8</mat-option>
-              <mat-option [value]="9">9</mat-option>
-              <mat-option [value]="10">10</mat-option>
-              <mat-option [value]="15">15</mat-option>
-            </mat-select>
-          </mat-form-field>
+            <span style="padding: 5px;"></span>
+
+            <mat-form-field>
+              <mat-label>Choose Plus Damage Bonus:</mat-label>
+              <mat-select [(value)]="bonusDamageValueHTML">
+                <!-- <mat-option>None</mat-option> -->
+                <mat-option [value]="0">0</mat-option>
+                <mat-option [value]="1">1</mat-option>
+                <mat-option [value]="2">2</mat-option>
+                <mat-option [value]="3">3</mat-option>
+                <mat-option [value]="4">4</mat-option>
+                <mat-option [value]="5">5</mat-option>
+                <mat-option [value]="6">6</mat-option>
+                <mat-option [value]="7">7</mat-option>
+                <mat-option [value]="8">8</mat-option>
+                <mat-option [value]="9">9</mat-option>
+                <mat-option [value]="10">10</mat-option>
+                <mat-option [value]="15">15</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
         </mat-card-content>
-      <!-- </mat-card>
+        <!-- </mat-card>
     </div>
 
     <!-- <br /> -->
-    <!-- <div> -->
-      <!-- <mat-card> -->
+        <!-- <div> -->
+        <!-- <mat-card> -->
         <label>Barbarian Rage:</label>
         <mat-card-content>
-          <mat-form-field>
+          <mat-form-field style="max-width: 100%;">
             <mat-label>Rage Damage Bonus:</mat-label>
             <mat-select [(value)]="bonusRageDamageValueHTML">
               <!-- <mat-option>None</mat-option> -->
@@ -167,7 +223,7 @@
               <mat-option [value]="4">4</mat-option>
             </mat-select>
           </mat-form-field>
-          <!-- <br /> -->
+          <br />
           <!--           <mat-form-field> -->
           <label>Modification Info:</label>
           <br />
@@ -179,19 +235,18 @@
     </div>
   </aside>
 
-
   <aside class="aside aside-2">
     <div>
       <mat-card>
-        <button mat-raised-button color="warn">
+        <!-- <button mat-raised-button color="warn">
           TestButton
         </button>
-        <br />
+        <br /> -->
         <mat-label>Roll Options:</mat-label>
         <div class="rollButtons">
           <div style="display: flex;">
             <button
-              style="margin-right: .5rem; margin-top: .5rem; width: 100%;"
+              style="margin-right: 0.5rem; margin-top: 0.5rem; width: 100%;"
               mat-raised-button
               color="primary"
               type="button"
@@ -199,7 +254,7 @@
               ROLL D20
             </button>
             <button
-              style="margin-top: .5rem; width: 100%;"
+              style="margin-top: 0.5rem; width: 100%;"
               mat-raised-button
               color="primary"
               type="button"
@@ -209,7 +264,7 @@
           </div>
           <div style="display: flex;">
             <button
-              style="margin-right: .5rem; margin-top: .5rem; width: 100%;"
+              style="margin-right: 0.5rem; margin-top: 0.5rem; width: 100%;"
               mat-raised-button
               color="primary"
               type="button"
@@ -217,7 +272,7 @@
               ROLL MULTI ATTACK
             </button>
             <button
-              style="margin-top: .5rem; width: 100%;"
+              style="margin-top: 0.5rem; width: 100%;"
               mat-raised-button
               color="primary"
               type="button"
@@ -227,7 +282,7 @@
           </div>
           <div style="display: flex;">
             <button
-              style="margin-top: .5rem; width: 100%;"
+              style="margin-top: 0.5rem; width: 100%;"
               mat-raised-button
               color="warn"
               type="button"

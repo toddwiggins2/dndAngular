@@ -60,6 +60,10 @@ $dark-accent:  mat-palette($mat-amber, A200, A100, A400);
 $dark-warn:    mat-palette($mat-deep-orange);
 $dark-theme:   mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
 
+$light-primary: mat-palette($mat-blue-grey);
+$light-accent:  mat-palette($mat-amber, A200, A100, A400);
+$light-warn:    mat-palette($mat-deep-orange);
+$light-theme:   mat-light-theme($light-primary, $light-accent, $light-warn);
 
 @include angular-material-theme($dnd-theme);
 

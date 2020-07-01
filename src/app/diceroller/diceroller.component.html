@@ -1,133 +1,113 @@
 <!DOCTYPE html>
-<mat-sidenav-container>
-  <!-- <mat-sidenav #sidenav opened [mode]="mode.value"> -->
-    <mat-sidenav opened mode="side" position="start">
-<!--
+<div class="wrapper">
+  <!--   <mat-sidenav-container>
+    <mat-sidenav opened mode="side" position="start"> -->
 
-    <div>
+  <div class="left-data">
+    <mat-card style="padding-bottom: 0;">
+      <label>Basic Damage Info:</label>
+      <mat-card-content>
+        <mat-form-field>
+          <mat-label>Choose Number of Attacks!</mat-label>
+          <mat-select [(value)]="numberofAttacksHTML">
+            <!-- <mat-option>None</mat-option> -->
+            <mat-option [value]="1">1</mat-option>
+            <mat-option [value]="2">2</mat-option>
+            <mat-option [value]="3">3</mat-option>
+            <mat-option [value]="4">4</mat-option>
+            <mat-option [value]="5">5</mat-option>
+            <mat-option [value]="6">6</mat-option>
+            <mat-option [value]="15">15</mat-option>
+          </mat-select>
+        </mat-form-field>
 
-      <button
-        style="float: right; margin: 2px;"
-        mat-raised-button
-        color="accent"
-        (click)="sidenav.toggle()"
-      >
-        <mat-icon>arrow_back</mat-icon>
-      </button>
-      <br />
-      <br />
-    </div> -->
-
-    <div>
-      <mat-card>
-        <label>Basic Damage Info:</label>
-        <mat-card-content>
-          <mat-form-field>
-            <mat-label>Choose Number of Attacks!</mat-label>
-            <mat-select [(value)]="numberofAttacksHTML">
-              <!-- <mat-option>None</mat-option> -->
-              <mat-option [value]="1">1</mat-option>
-              <mat-option [value]="2">2</mat-option>
-              <mat-option [value]="3">3</mat-option>
-              <mat-option [value]="4">4</mat-option>
-              <mat-option [value]="5">5</mat-option>
-              <mat-option [value]="6">6</mat-option>
-              <mat-option [value]="15">15</mat-option>
-            </mat-select>
+        <div style="display:flex">
+          <mat-form-field style="width: 100px;" >
+            <mat-label>Number of Die:</mat-label>
+            <input type="number" min="1" [(ngModel)]="dieNumberHTML" matInput />
           </mat-form-field>
 
-          <div>
-            <mat-form-field style="width: 100.5px;">
-              <mat-label>Number of Die:</mat-label>
-              <input
-                type="number"
-                min="1"
-                [(ngModel)]="dieNumberHTML"
-                matInput
-              />
-            </mat-form-field>
-
-            <mat-form-field style="width: 100.5px;">
-              <mat-label>Die Type:</mat-label>
-              <mat-select [(value)]="dieTypeHTML">
-                <mat-option [value]="4">d4</mat-option>
-                <mat-option [value]="6">d6</mat-option>
-                <mat-option [value]="8">d8</mat-option>
-                <mat-option [value]="10">d10</mat-option>
-                <mat-option [value]="12">d12</mat-option>
-              </mat-select>
-            </mat-form-field>
-          </div>
-          <mat-form-field>
-            <mat-label>Choose Plus Hit Bonus:</mat-label>
-            <mat-select [(value)]="bonusHitValueHTML">
-              <!-- <mat-option>None</mat-option> -->
-              <mat-option [value]="0">0</mat-option>
-              <mat-option [value]="1">1</mat-option>
-              <mat-option [value]="2">2</mat-option>
-              <mat-option [value]="3">3</mat-option>
-              <mat-option [value]="4">4</mat-option>
-              <mat-option [value]="5">5</mat-option>
-              <mat-option [value]="6">6</mat-option>
-              <mat-option [value]="7">7</mat-option>
-              <mat-option [value]="8">8</mat-option>
-              <mat-option [value]="9">9</mat-option>
-              <mat-option [value]="10">10</mat-option>
-              <mat-option [value]="15">15</mat-option>
+          <mat-form-field style="width: 100px;">
+            <mat-label>Die Type:</mat-label>
+            <mat-select [(value)]="dieTypeHTML">
+              <mat-option [value]="4">d4</mat-option>
+              <mat-option [value]="6">d6</mat-option>
+              <mat-option [value]="8">d8</mat-option>
+              <mat-option [value]="10">d10</mat-option>
+              <mat-option [value]="12">d12</mat-option>
             </mat-select>
           </mat-form-field>
+        </div>
+        
+        <mat-form-field>
+          <mat-label>Choose Plus Hit Bonus:</mat-label>
+          <mat-select [(value)]="bonusHitValueHTML">
+            <!-- <mat-option>None</mat-option> -->
+            <mat-option [value]="0">0</mat-option>
+            <mat-option [value]="1">1</mat-option>
+            <mat-option [value]="2">2</mat-option>
+            <mat-option [value]="3">3</mat-option>
+            <mat-option [value]="4">4</mat-option>
+            <mat-option [value]="5">5</mat-option>
+            <mat-option [value]="6">6</mat-option>
+            <mat-option [value]="7">7</mat-option>
+            <mat-option [value]="8">8</mat-option>
+            <mat-option [value]="9">9</mat-option>
+            <mat-option [value]="10">10</mat-option>
+            <mat-option [value]="15">15</mat-option>
+          </mat-select>
+        </mat-form-field>
 
-          <br />
+        <br />
 
-          <mat-form-field>
-            <mat-label>Choose Plus Damage Bonus:</mat-label>
-            <mat-select [(value)]="bonusDamageValueHTML">
-              <!-- <mat-option>None</mat-option> -->
-              <mat-option [value]="0">0</mat-option>
-              <mat-option [value]="1">1</mat-option>
-              <mat-option [value]="2">2</mat-option>
-              <mat-option [value]="3">3</mat-option>
-              <mat-option [value]="4">4</mat-option>
-              <mat-option [value]="5">5</mat-option>
-              <mat-option [value]="6">6</mat-option>
-              <mat-option [value]="7">7</mat-option>
-              <mat-option [value]="8">8</mat-option>
-              <mat-option [value]="9">9</mat-option>
-              <mat-option [value]="10">10</mat-option>
-              <mat-option [value]="15">15</mat-option>
-            </mat-select>
-          </mat-form-field>
-        </mat-card-content>
-      </mat-card>
-    </div>
-
-    <!-- <br /> -->
-    <div>
-      <mat-card>
-        <label>Barbarian Rage:</label>
-        <mat-card-content>
-          <mat-form-field>
-            <mat-label>Rage Damage Bonus:</mat-label>
-            <mat-select [(value)]="bonusRageDamageValueHTML">
-              <!-- <mat-option>None</mat-option> -->
-              <mat-option [value]="0">0</mat-option>
-              <mat-option [value]="2">2</mat-option>
-              <mat-option [value]="3">3</mat-option>
-              <mat-option [value]="4">4</mat-option>
-            </mat-select>
-          </mat-form-field>
-          <br />
-          <!--           <mat-form-field> -->
-          <label>Modification Info:</label>
-          <br />
-          <mat-checkbox [(ngModel)]="checkBless">Bless</mat-checkbox>
-          <br />
-          <mat-checkbox [(ngModel)]="checkBane">Bane</mat-checkbox>
-        </mat-card-content>
-      </mat-card>
-    </div>
-  </mat-sidenav>
-
+        <mat-form-field>
+          <mat-label>Choose Plus Damage Bonus:</mat-label>
+          <mat-select [(value)]="bonusDamageValueHTML">
+            <!-- <mat-option>None</mat-option> -->
+            <mat-option [value]="0">0</mat-option>
+            <mat-option [value]="1">1</mat-option>
+            <mat-option [value]="2">2</mat-option>
+            <mat-option [value]="3">3</mat-option>
+            <mat-option [value]="4">4</mat-option>
+            <mat-option [value]="5">5</mat-option>
+            <mat-option [value]="6">6</mat-option>
+            <mat-option [value]="7">7</mat-option>
+            <mat-option [value]="8">8</mat-option>
+            <mat-option [value]="9">9</mat-option>
+            <mat-option [value]="10">10</mat-option>
+            <mat-option [value]="15">15</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </mat-card-content>
+    </mat-card>
+    <!--       </div>
+      <div> -->
+    <br />
+    <mat-card>
+      <label>Barbarian Rage:</label>
+      <mat-card-content>
+        <mat-form-field>
+          <mat-label>Rage Damage Bonus:</mat-label>
+          <mat-select [(value)]="bonusRageDamageValueHTML">
+            <!-- <mat-option>None</mat-option> -->
+            <mat-option [value]="0">0</mat-option>
+            <mat-option [value]="2">2</mat-option>
+            <mat-option [value]="3">3</mat-option>
+            <mat-option [value]="4">4</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <br />
+        <!--           <mat-form-field> -->
+        <label>Modification Info:</label>
+        <br />
+        <mat-checkbox [(ngModel)]="checkBless">Bless</mat-checkbox>
+        <br />
+        <mat-checkbox [(ngModel)]="checkBane">Bane</mat-checkbox>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <!--     </mat-sidenav>
+ -->
   <!-- ******************************************
 ******************************************
 ******************************************
@@ -136,21 +116,22 @@
 ******************************************
 ****************************************** -->
 
-  <mat-sidenav-content>
-    <!--     <p>
+  <!--     <mat-sidenav-content>
+ -->
+  <!--     <p>
       <button mat-raised-button color="accent" (click)="sidenav.toggle()">
         <mat-icon>arrow_forward</mat-icon>
       </button>
     </p>
     <p>
       <mat-radio-group class="example-radio-group" [formControl]="mode"> -->
-    <!-- <label>Mode:</label>
+  <!-- <label>Mode:</label>
         <mat-radio-button value="over">Over</mat-radio-button>
         <mat-radio-button value="side">Side</mat-radio-button>
         <mat-radio-button value="push">Push</mat-radio-button> -->
-    <!--       </mat-radio-group>
+  <!--       </mat-radio-group>
     </p> -->
-
+  <div class="center-data">
     <div class="center">
       <!-- <button
         class="navButton"
@@ -263,14 +244,18 @@
       <!-- First D20 Column -->
       <ng-container matColumnDef="First D20">
         <mat-header-cell *matHeaderCellDef> First D20 </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{ element.FirstD20 }} </mat-cell>
+        <mat-cell *matCellDef="let element">
+          {{ element.FirstD20 }}
+        </mat-cell>
         <mat-footer-cell *matFooterCellDef> </mat-footer-cell>
       </ng-container>
 
       <!-- Second D20 Col -->
       <ng-container matColumnDef="Second D20">
         <mat-header-cell *matHeaderCellDef> Second D20 </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{ element.SecondD20 }} </mat-cell>
+        <mat-cell *matCellDef="let element">
+          {{ element.SecondD20 }}
+        </mat-cell>
         <mat-footer-cell *matFooterCellDef> </mat-footer-cell>
       </ng-container>
 
@@ -291,9 +276,12 @@
       <!-- Damage Die Column -->
       <ng-container matColumnDef="Damage Die">
         <mat-header-cell *matHeaderCellDef> Damage Die </mat-header-cell>
-        <mat-cell *matCellDef="let element"
-        title="{{ element.allDiceObjects }}"
-        > {{ element.damageDie }} </mat-cell>
+        <mat-cell
+          *matCellDef="let element"
+          title="{{ element.allDiceObjects }}"
+        >
+          {{ element.damageDie }}
+        </mat-cell>
         <mat-footer-cell *matFooterCellDef> </mat-footer-cell>
       </ng-container>
 
@@ -318,7 +306,9 @@
       <!-- Plus to Hit Column -->
       <ng-container matColumnDef="Plus to Hit">
         <mat-header-cell *matHeaderCellDef> Plus to Hit </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{ element.plusToHit }} </mat-cell>
+        <mat-cell *matCellDef="let element">
+          {{ element.plusToHit }}
+        </mat-cell>
         <mat-footer-cell *matFooterCellDef> </mat-footer-cell>
       </ng-container>
 
@@ -361,74 +351,79 @@
     </mat-table>
 
     <!-- Bottom Information -->
-    <div class="center" style="text-align: center;">
+    <div
+      class="center"
+      style="text-align: center; background-color: #231942; padding-bottom: 0;"
+    >
       <h2>Regular D20 Roll: {{ valueD20 }} plus {{ bonusHitValueHTML }}</h2>
       <h2>{{ valueD20Advantage }}</h2>
       <h2 class="mat-h2">Total of all dice: {{ totalAllDamage }}</h2>
     </div>
-  </mat-sidenav-content>
-
-  <mat-sidenav opened mode="side" position="end">
-    <div>
-      <mat-card>
-        <button mat-raised-button color="warn" (click)="testButton()">
-          TestButton
-        </button>
-
-        <div class="rollButtons">
-          <div style="display: flex;">
-            <button
-              style="margin: 0.5rem; width: -webkit-fill-available;"
-              mat-raised-button
-              color="primary"
-              (click)="getRoll20Advantage('notAdvantage')"
-              type="button"
-            >
-              Roll D20
-            </button>
-            <button
-              style="margin: 0.5rem; width: -webkit-fill-available;"
-              mat-raised-button
-              color="primary"
-              (click)="getRoll20Advantage('advantage')"
-              type="button"
-            >
-              Adv. Roll D20
-            </button>
-          </div>
-          <div style="display: flex;">
-            <button
-              style="margin: 0.5rem; width: -webkit-fill-available;"
-              mat-raised-button
-              color="primary"
-              (click)="multipleAttacks('notAdvantage')"
-              type="button"
-            >
-              Roll Multi Attack
-            </button>
-            <button
-              style="margin: 0.5rem; width: -webkit-fill-available;"
-              mat-raised-button
-              color="primary"
-              (click)="multipleAttacks('advantage')"
-              type="button"
-            >
-              Adv. Multi Attack
-            </button>
-          </div>
-          <div style="display: flex;">
-            <button
-              style="margin: 0.5rem; width: -webkit-fill-available;"
-              mat-raised-button
-              color="warn"
-              (click)="multipleAttacks('disAdvantage')"
-              type="button"
-            >
-              Disadvantage Roll Multiple Attacks
-            </button>
-          </div>
+  </div>
+  <!--     </mat-sidenav-content>
+ -->
+  <!--     <mat-sidenav opened mode="side" position="end">
+ -->
+  <div class="right-data">
+    <mat-card>
+      <button mat-raised-button color="warn" (click)="testButton()">
+        TestButton
+      </button>
+      <div>
+        <div style="display: flex;">
+          <button
+            style="margin: 0.5rem; margin-left: 0; width: -webkit-fill-available;"
+            mat-raised-button
+            color="primary"
+            (click)="getRoll20Advantage('notAdvantage')"
+            type="button"
+          >
+            Roll D20
+          </button>
+          <button
+            style="margin: 0.5rem; margin-right: 0; width: -webkit-fill-available;"
+            mat-raised-button
+            color="primary"
+            (click)="getRoll20Advantage('advantage')"
+            type="button"
+          >
+            Adv. Roll D20
+          </button>
         </div>
-      </mat-card>
-    </div>
-  </mat-sidenav>
-</mat-sidenav-container>
+        <div style="display: flex;">
+          <button
+            style="margin: 0.5rem; margin-left: 0; width: -webkit-fill-available;"
+            mat-raised-button
+            color="primary"
+            (click)="multipleAttacks('notAdvantage')"
+            type="button"
+          >
+            Roll Multi Attack
+          </button>
+          <button
+            style="margin: 0.5rem; margin-right: 0; width: -webkit-fill-available;"
+            mat-raised-button
+            color="primary"
+            (click)="multipleAttacks('advantage')"
+            type="button"
+          >
+            Adv. Multi Attack
+          </button>
+        </div>
+        <div style="display: flex;">
+          <button
+            style="margin: 0.5rem; margin-left: 0; margin-right: 0; width: -webkit-fill-available;"
+            mat-raised-button
+            color="warn"
+            (click)="multipleAttacks('disAdvantage')"
+            type="button"
+          >
+            Disadvantage Roll Multiple Attacks
+          </button>
+        </div>
+      </div>
+    </mat-card>
+  </div>
+  <!--     </mat-sidenav>
+</mat-sidenav-container> -->
+</div>
