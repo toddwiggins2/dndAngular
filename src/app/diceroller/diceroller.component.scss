@@ -101,6 +101,7 @@ table {
   margin-left:auto;
   margin-right:auto;
   width:80%;
+  border-radius: 4px;
 }
 
 table, th, td {
@@ -164,6 +165,7 @@ table, th, td {
   overflow: auto;
   background: #5E548E;
   color: #F1FAEE;
+  border-radius: 4px;
 
 }
 
@@ -192,6 +194,7 @@ mat-option {
   background:#231942
 }
 
+//LARGE SCREEN
 .wrapper {
   display: grid;
   grid-gap: .5rem .5rem;
@@ -227,7 +230,8 @@ grid-column: 3;
 min-width: 280px;
 }
 
-@media all and (max-width: 1440px) {
+// MEDIUM SCREEN
+@media all and (max-width: 1620px) {
   //.aside { flex: 1 0 0 !important; }
   .wrapper {
     display: grid;
@@ -265,6 +269,7 @@ min-width: 280px;
    }
 }
 
+//SMALL SCREEN
 @media all and (max-width: 680px) {
   //.aside { flex: 1 0 0 !important; }
   .wrapper {

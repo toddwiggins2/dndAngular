@@ -83,8 +83,7 @@
     </mat-card>
     <!--       </div>
       <div> -->
-    <br />
-    <mat-card>
+    <mat-card style="margin-top: .5rem;">
       <label>Barbarian Rage:</label>
       <mat-card-content>
         <mat-form-field>
@@ -356,12 +355,11 @@
 
     <!-- Bottom Information -->
     <div
-      class="center"
-      style="text-align: center; background-color: #231942; padding-bottom: 0;"
+      style="text-align: center; background-color: #5E548E; margin-top: .5rem; margin-bottom: 0rem;"
     >
       <h2>Regular D20 Roll: {{ valueD20 }} plus {{ bonusHitValueHTML }}</h2>
       <h2>{{ valueD20Advantage }}</h2>
-      <h2 class="mat-h2">Total of all dice: {{ totalAllDamage }}</h2>
+      <h2 style="margin-bottom: 0;">Total of all dice: {{ totalAllDamage }}</h2>
     </div>
   </div>
   <!--     </mat-sidenav-content>
@@ -448,6 +446,16 @@
         </div>
       </div>
     </mat-card>
+
+    <div
+      style="text-align: center; background-color: #5E548E; margin-top: .5rem; margin-bottom: 0rem; border-radius: 4px;"
+    >
+      <h2>Regular D20 Roll: {{ valueD20 }} plus {{ bonusHitValueHTML }}</h2>
+      <h2>{{ valueD20Advantage }}</h2>
+      <h2 style="margin-bottom: 0;">Total of all dice: {{ totalAllDamage }}</h2>
+    </div>
+
+
   </div>
   <!--     </mat-sidenav>
 </mat-sidenav-container> -->
