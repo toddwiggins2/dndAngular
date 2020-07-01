@@ -97,11 +97,25 @@
         </mat-form-field>
         <br />
         <!--           <mat-form-field> -->
-        <label>Modification Info:</label>
-        <br />
-        <mat-checkbox [(ngModel)]="checkBless">Bless</mat-checkbox>
-        <br />
-        <mat-checkbox [(ngModel)]="checkBane">Bane</mat-checkbox>
+        <div style="display: flex;">
+          <div style="width: 50%;">
+            <label>Modification Info:</label>
+            <br />
+            <mat-checkbox [(ngModel)]="checkBless">Bless</mat-checkbox>
+            <br />
+            <mat-checkbox [(ngModel)]="checkBane">Bane</mat-checkbox>
+          </div>
+          <div style="width: 50%;">
+            <label>Brutial Critical:</label>
+            <br />
+            <mat-radio-group [(ngModel)]="brutalCriticalHTML">
+              <mat-radio-button [value]="0">Not Applicable</mat-radio-button>
+              <mat-radio-button [value]="1">9th Level</mat-radio-button>
+              <mat-radio-button [value]="2">13th Level</mat-radio-button>
+              <mat-radio-button [value]="3">17th Level</mat-radio-button>
+            </mat-radio-group>
+          </div>
+        </div>
       </mat-card-content>
     </mat-card>
   </div>
@@ -361,7 +375,7 @@
         margin-bottom: 0rem;
       "
     >
-      <h2>Regular D20 Roll: {{ valueD20 }} plus {{ bonusHitValueHTML }}</h2>
+      <h2>Regular D20 Roll: {{ valueD20 }}</h2>
       <h2>{{ valueD20Advantage }}</h2>
       <h2 style="margin-bottom: 0;">Total of all dice: {{ totalAllDamage }}</h2>
     </div>
@@ -464,7 +478,7 @@
         border-radius: 4px;
       "
     >
-      <h2>Regular D20 Roll: {{ valueD20 }} plus {{ bonusHitValueHTML }}</h2>
+      <h2>Regular D20 Roll: {{ valueD20 }}</h2>
       <h2>{{ valueD20Advantage }}</h2>
       <h2 style="margin-bottom: 0;">Total of all dice: {{ totalAllDamage }}</h2>
     </div>

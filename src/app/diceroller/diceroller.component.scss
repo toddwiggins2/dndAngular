@@ -160,7 +160,7 @@ td {
 }
 
 .mat-table {
-  // display: flex;
+ // display: flex;
   overflow: auto;
   background: #5e548e;
   color: #f1faee;
@@ -174,6 +174,25 @@ td {
   min-width: 1px;
 }
 
+.mat-checkbox {
+  width: 100%;
+  //background: blueviolet;
+  min-width: 1px;
+}
+
+.mat-radio-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.mat-radio-label {
+  padding-bottom: 4px;
+}
+
+.mat-radio-button {
+  padding-bottom: 4px;
+}
+
 .mat-drawer {
   background: #231942;
 }
@@ -185,7 +204,7 @@ td {
 .mat-card {
   background: #5e548e;
 }
-mat-option {
+.mat-option {
   background: #231942;
 }
 

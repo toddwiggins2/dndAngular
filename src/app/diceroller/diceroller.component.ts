@@ -22,6 +22,7 @@ export interface AttackArray {
   bless: number;
   bane: number;
   allDiceObjects: string;
+  brutalCritical: number;
 }
 
 const DICE_ARRAY: AttackArray[] = [
@@ -39,6 +40,7 @@ const DICE_ARRAY: AttackArray[] = [
     bless: 0,
     bane: 0,
     allDiceObjects: '0',
+    brutalCritical: 0,
   },
 ];
 
@@ -85,6 +87,7 @@ export class DicerollerComponent implements OnInit {
 
   // Bonus Rage Damage for Barb:
   bonusRageDamageValueHTML = 2;
+  brutalCriticalHTML = 0;
 
   // Extra Factors for rolling to Hit (Buffs and DeBuffs)
   checkBless = false;
@@ -109,7 +112,7 @@ export class DicerollerComponent implements OnInit {
     }
     this.dataSource = [...this.dataSource];
     this.totalAllDamage = this.getTotalDamage();
-  }
+  };
 
   getTotalDamage() {
     return this.dataSource
@@ -126,6 +129,7 @@ export class DicerollerComponent implements OnInit {
     const blessValue = this.checkBless ? Math.floor(Math.random() * 4) + 1 : 0;
 
     console.log(`Bane: ${baneValue} Bless: ${blessValue}`);
+    console.log(`${this.brutalCriticalHTML}`);
   }
 
   // *********************************
@@ -197,13 +201,15 @@ export class DicerollerComponent implements OnInit {
 
     let rValueDamage = 0;
     let finalrValue = 0;
-    this.arrayOfDamageDie.length = 0;
+    // this.arrayOfDamageDie.length = 0;
 
     for (let index = 0; index < Number(numberOfDie); index++) {
       // console.log('Final Value Loop: ' + finalrValue);
       rValueDamage = Math.floor(Math.random() * dieType) + 1;
       finalrValue = finalrValue + rValueDamage;
-      this.arrayOfDamageDie[this.arrayOfDamageDie.length] = ` Die ${index + 1}: ${rValueDamage}`; // + ' ' + rValueDamage;
+      this.arrayOfDamageDie[this.arrayOfDamageDie.length] = ` Die ${
+        index + 1
+      }: ${rValueDamage}`; // + ' ' + rValueDamage;
       // console.log('Die Roll: ' + rValueDamage);
       // console.log('Final Value Loop: ' + finalrValue);
     }
@@ -227,6 +233,7 @@ export class DicerollerComponent implements OnInit {
       this.dataSource.pop();
     }
     let diceTotal = 0;
+    let brutalCriticalValue = 0;
     this.totalAllDamage = 0;
 
     for (let index = 0; index < this.numberofAttacksHTML; index++) {
@@ -263,6 +270,7 @@ export class DicerollerComponent implements OnInit {
       if (resultFinalD20 === 20) {
         // Natural 20 Crit:
         const secondDice = this.getDamage();
+        brutalCriticalValue = Math.floor(Math.random() * 4) + 1;
         diceTotal =
           firstDice +
           secondDice +
@@ -301,6 +309,7 @@ export class DicerollerComponent implements OnInit {
         bless: blessValue,
         bane: baneValue,
         allDiceObjects: this.arrayOfDamageDie.join(', '),
+        brutalCritical: brutalCriticalValue,
       };
       // Push new Values into Interface and update Datasource.
       this.dataSource.push(newItem);
@@ -308,6 +317,7 @@ export class DicerollerComponent implements OnInit {
 
       // All of the Damage from every Loop:
       this.totalAllDamage = this.totalAllDamage + diceTotal;
+      this.arrayOfDamageDie.length = 0;
     }
 
     console.log(this.dataSource);
