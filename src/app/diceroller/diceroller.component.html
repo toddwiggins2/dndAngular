@@ -27,7 +27,6 @@
             <input type="number" min="1" [(ngModel)]="dieNumberHTML" matInput />
           </mat-form-field>
 
-
           <mat-form-field>
             <mat-label>Die Type:</mat-label>
             <mat-select [(value)]="dieTypeHTML">
@@ -83,7 +82,7 @@
     </mat-card>
     <!--       </div>
       <div> -->
-    <mat-card style="margin-top: .5rem;">
+    <mat-card style="margin-top: 0.5rem;">
       <label>Barbarian Rage:</label>
       <mat-card-content>
         <mat-form-field>
@@ -142,11 +141,10 @@
         <mat-icon>arrow_forward</mat-icon>
       </button> -->
       <div class="centerIMG">
-      <img src="../../assets/heroimage.jpg" align="middle" />
-      <br />
+        <img src="../../assets/heroimage.jpg" align="middle" />
+        <br />
+      </div>
     </div>
-    </div>
-
 
     <!--
     <button mat-raised-button color="warn" (click)="refractoredGetDamage()">
@@ -355,8 +353,13 @@
 
     <!-- Bottom Information -->
     <div
-    class="center"
-      style="text-align: center; background-color: #5E548E; margin-top: .5rem; margin-bottom: 0rem;"
+      class="center"
+      style="
+        text-align: center;
+        background-color: #5e548e;
+        margin-top: 0.5rem;
+        margin-bottom: 0rem;
+      "
     >
       <h2>Regular D20 Roll: {{ valueD20 }} plus {{ bonusHitValueHTML }}</h2>
       <h2>{{ valueD20Advantage }}</h2>
@@ -379,6 +382,7 @@
               margin: 0.5rem;
               margin-left: 0;
               width: -webkit-fill-available;
+              background: #4e74a8;
             "
             mat-raised-button
             color="primary"
@@ -392,6 +396,7 @@
               margin: 0.5rem;
               margin-right: 0;
               width: -webkit-fill-available;
+              background: #4d55a1;
             "
             mat-raised-button
             color="primary"
@@ -407,6 +412,7 @@
               margin: 0.5rem;
               margin-left: 0;
               width: -webkit-fill-available;
+              background: #4d55a1;
             "
             mat-raised-button
             color="primary"
@@ -420,6 +426,7 @@
               margin: 0.5rem;
               margin-right: 0;
               width: -webkit-fill-available;
+              background: #4e74a8;
             "
             mat-raised-button
             color="primary"
@@ -449,14 +456,18 @@
     </mat-card>
 
     <div
-      style="text-align: center; background-color: #5E548E; margin-top: .5rem; margin-bottom: 0rem; border-radius: 4px;"
+      style="
+        text-align: center;
+        background-color: #5e548e;
+        margin-top: 0.5rem;
+        margin-bottom: 0rem;
+        border-radius: 4px;
+      "
     >
       <h2>Regular D20 Roll: {{ valueD20 }} plus {{ bonusHitValueHTML }}</h2>
       <h2>{{ valueD20Advantage }}</h2>
       <h2 style="margin-bottom: 0;">Total of all dice: {{ totalAllDamage }}</h2>
     </div>
-
-
   </div>
   <!--     </mat-sidenav>
 </mat-sidenav-container> -->

@@ -58,17 +58,17 @@ button {
 
 .crit {
   color: white;
-  font-weight: bold;
+  font-weight: 600;
   background-color: rgb(0, 128, 58);
 }
 
 .miss {
   color: white;
-  font-weight: bold;
+  font-weight: 500;
   background-color: red;
 }
 .bold {
-  font-weight: bold;
+  font-weight: 500;
 }
 
 .highlight {
@@ -97,14 +97,16 @@ button {
 
 table {
   border-collapse: collapse;
-  text-align:center;
-  margin-left:auto;
-  margin-right:auto;
-  width:80%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
   border-radius: 4px;
 }
 
-table, th, td {
+table,
+th,
+td {
   border: 1px solid rgb(0, 0, 0);
   // color: rgb(190, 145, 20);
 }
@@ -112,7 +114,6 @@ table, th, td {
 // .sideBar {
 //   width:300px;
 // }
-
 
 .navButton {
   position: absolute;
@@ -124,7 +125,7 @@ table, th, td {
   color: white;
   font-size: 16px;
   margin: 2px;
- // padding: 12px 12px;
+  // padding: 12px 12px;
   border: none;
   cursor: pointer;
   border-radius: 5px;
@@ -136,39 +137,35 @@ table, th, td {
   flex-direction: column;
   justify-content: center;
   padding: 0;
-  color: #F1FAEE;
-
+  color: #f1faee;
 }
 
 .mat-cell {
   display: flex;
   flex-wrap: wrap;
   text-align: center;
-  justify-content:center;
+  justify-content: center;
   padding: 0;
-  color: #F1FAEE;
-
+  color: #f1faee;
 }
 
 .mat-footer-cell {
   display: flex;
   flex-wrap: wrap;
   text-align: center;
-  justify-content:center;
+  justify-content: center;
   padding: 0;
-  color: #F1FAEE;
-
+  color: rgb(255, 97, 49);
+  font-weight: 500;
 }
 
 .mat-table {
   // display: flex;
   overflow: auto;
-  background: #5E548E;
-  color: #F1FAEE;
+  background: #5e548e;
+  color: #f1faee;
   border-radius: 4px;
-
 }
-
 
 .mat-form-field {
   //display: block;
@@ -179,129 +176,127 @@ table, th, td {
 
 .mat-drawer {
   background: #231942;
-
 }
 
 .mat-drawer-content {
-  background: #231942
+  background: #231942;
 }
 
 .mat-card {
-  background: #5E548E;
-
+  background: #5e548e;
 }
 mat-option {
-  background:#231942
+  background: #231942;
 }
 
 //LARGE SCREEN
 .wrapper {
   display: grid;
-  grid-gap: .5rem .5rem;
+  grid-gap: 0.5rem 0.5rem;
   grid-template-columns: 20% auto 20%;
   grid-template-rows: 3;
   // font-weight: bold;
   // text-align: center;
   background: #231942;
   //background: white;
-  padding-right: .5rem;
-  padding-left: .5rem;
-  padding-top: .5rem;
-  padding-bottom: .5rem;
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
   height: 100%;
 }
 
 .mat-app-background {
   background-color: #231942;
-  color: #F1FAEE;
+  color: #f1faee;
 }
 
 .left-data {
- grid-column: 1;
- min-width: 280px;
+  grid-column: 1;
+  min-width: 280px;
 }
 
 .center-data {
-grid-column: 2;
+  grid-column: 2;
 }
 
 .right-data {
-grid-column: 3;
-min-width: 280px;
+  grid-column: 3;
+  min-width: 280px;
 }
 
 // MEDIUM SCREEN
 @media all and (max-width: 1620px) {
   .wrapper {
     display: grid;
-    grid-gap: .5rem .5rem;
-    grid-template-columns: 1fr 1fr ;
+    grid-gap: 0.5rem 0.5rem;
+    grid-template-columns: 1fr 1fr;
     grid-template-rows: 2;
     // font-weight: bold;
     // text-align: center;
     background: #231942;
     //background: white;
-    padding-right: .5rem;
-    padding-left: .5rem;
-    padding-top: .5rem;
-    padding-bottom: .5rem;
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
     height: 100%;
   }
   .left-data {
     grid-column: 1;
     grid-row: 2;
     min-width: 280px;
-   }
+  }
 
-   .center-data {
+  .center-data {
     grid-column: 1 / span 2;
     grid-row: 1;
-   }
+  }
 
-   .right-data {
+  .right-data {
     grid-column: 2;
     grid-row: 2;
     min-width: 280px;
-   }
-   .center {
-     display: none;
-   }
+  }
+  .center {
+    display: none;
+  }
 }
 
 //SMALL SCREEN
 @media all and (max-width: 680px) {
   .wrapper {
     display: grid;
-    grid-gap: .5rem .5rem;
+    grid-gap: 0.5rem 0.5rem;
     grid-template-columns: 1fr;
     grid-template-rows: 2;
     // font-weight: bold;
     // text-align: center;
     background: #231942;
     //background: white;
-    padding-right: .5rem;
-    padding-left: .5rem;
-    padding-top: .5rem;
-    padding-bottom: .5rem;
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
     height: 100%;
   }
   .left-data {
     grid-column: 1;
     grid-row: 3;
     min-width: 280px;
-   }
+  }
 
-   .center-data {
+  .center-data {
     grid-column: 1;
     grid-row: 1;
-   }
+  }
 
-   .right-data {
+  .right-data {
     grid-column: 1;
     grid-row: 2;
     min-width: 280px;
-   }
-   .center {
-     display: none;
-   }
+  }
+  .center {
+    display: none;
+  }
 }
