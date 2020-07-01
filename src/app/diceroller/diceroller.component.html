@@ -21,13 +21,14 @@
           </mat-select>
         </mat-form-field>
 
-        <div style="display:flex">
-          <mat-form-field style="width: 100px;" >
+        <div style="display: flex;">
+          <mat-form-field style="padding-right: 1rem;">
             <mat-label>Number of Die:</mat-label>
             <input type="number" min="1" [(ngModel)]="dieNumberHTML" matInput />
           </mat-form-field>
 
-          <mat-form-field style="width: 100px;">
+
+          <mat-form-field>
             <mat-label>Die Type:</mat-label>
             <mat-select [(value)]="dieTypeHTML">
               <mat-option [value]="4">d4</mat-option>
@@ -38,7 +39,7 @@
             </mat-select>
           </mat-form-field>
         </div>
-        
+
         <mat-form-field>
           <mat-label>Choose Plus Hit Bonus:</mat-label>
           <mat-select [(value)]="bonusHitValueHTML">
@@ -372,7 +373,11 @@
       <div>
         <div style="display: flex;">
           <button
-            style="margin: 0.5rem; margin-left: 0; width: -webkit-fill-available;"
+            style="
+              margin: 0.5rem;
+              margin-left: 0;
+              width: -webkit-fill-available;
+            "
             mat-raised-button
             color="primary"
             (click)="getRoll20Advantage('notAdvantage')"
@@ -381,7 +386,11 @@
             Roll D20
           </button>
           <button
-            style="margin: 0.5rem; margin-right: 0; width: -webkit-fill-available;"
+            style="
+              margin: 0.5rem;
+              margin-right: 0;
+              width: -webkit-fill-available;
+            "
             mat-raised-button
             color="primary"
             (click)="getRoll20Advantage('advantage')"
@@ -392,7 +401,11 @@
         </div>
         <div style="display: flex;">
           <button
-            style="margin: 0.5rem; margin-left: 0; width: -webkit-fill-available;"
+            style="
+              margin: 0.5rem;
+              margin-left: 0;
+              width: -webkit-fill-available;
+            "
             mat-raised-button
             color="primary"
             (click)="multipleAttacks('notAdvantage')"
@@ -401,7 +414,11 @@
             Roll Multi Attack
           </button>
           <button
-            style="margin: 0.5rem; margin-right: 0; width: -webkit-fill-available;"
+            style="
+              margin: 0.5rem;
+              margin-right: 0;
+              width: -webkit-fill-available;
+            "
             mat-raised-button
             color="primary"
             (click)="multipleAttacks('advantage')"
@@ -412,7 +429,12 @@
         </div>
         <div style="display: flex;">
           <button
-            style="margin: 0.5rem; margin-left: 0; margin-right: 0; width: -webkit-fill-available;"
+            style="
+              margin: 0.5rem;
+              margin-left: 0;
+              margin-right: 0;
+              width: -webkit-fill-available;
+            "
             mat-raised-button
             color="warn"
             (click)="multipleAttacks('disAdvantage')"
